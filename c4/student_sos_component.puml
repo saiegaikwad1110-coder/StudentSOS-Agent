@@ -1,0 +1,51 @@
+@startuml StudentSOS_Component
+
+title StudentSOS Agent - C4 Level 3 Component Diagram
+
+skinparam rectangle {
+    RoundCorner 15
+}
+
+actor "Student" as student
+
+rectangle "StudentSOS Agent\nmain.py" {
+
+    rectangle "Main Menu" as menu
+
+    rectangle "User Input Handler" as input
+
+    rectangle "Calculator Handler" as calc_handler
+
+    rectangle "Quiz Handler" as quiz_handler
+
+    rectangle "Study Planner Handler" as planner_handler
+
+    rectangle "Motivation Handler" as motivation_handler
+
+    rectangle "Exit Handler" as exit_handler
+}
+
+rectangle "calculator.py\nCalculator Module" as calculator
+
+rectangle "quiz.py\nQuiz Module" as quiz
+
+rectangle "planner.py\nStudy Planner Module" as planner
+
+rectangle "motivation.py\nMotivation Module" as motivation
+
+student --> menu : Uses
+
+menu --> input : Gets selection
+
+input --> calc_handler : Calculator
+input --> quiz_handler : Quiz
+input --> planner_handler : Study Planner
+input --> motivation_handler : Motivation
+input --> exit_handler : Exit
+
+calc_handler --> calculator : Calls
+quiz_handler --> quiz : Calls
+planner_handler --> planner : Calls
+motivation_handler --> motivation : Calls
+
+@enduml

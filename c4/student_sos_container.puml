@@ -1,0 +1,31 @@
+@startuml StudentSOS_Container
+
+title StudentSOS Agent - C4 Level 2 Container Diagram
+
+skinparam rectangle {
+    RoundCorner 15
+}
+
+actor "Student" as student
+
+rectangle "StudentSOS Agent" {
+
+    rectangle "Main Application\n(main.py)" as main
+
+    rectangle "Calculator Module\n(calculator.py)" as calculator
+
+    rectangle "Quiz Module\n(quiz.py)" as quiz
+
+    rectangle "Study Planner Module\n(planner.py)" as planner
+
+    rectangle "Motivation Module\n(motivation.py)" as motivation
+}
+
+student --> main : Uses
+
+main --> calculator : Calls
+main --> quiz : Calls
+main --> planner : Calls
+main --> motivation : Calls
+
+@enduml

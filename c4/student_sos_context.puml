@@ -1,0 +1,13 @@
+@startuml StudentSOS_Context
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+title StudentSOS Agent - C4 Level 1: System Context
+
+Person(student, "Student", "A student who uses StudentSOS for academic assistance")
+
+System(studentsos, "StudentSOS Agent", "A Python-based student assistance system providing calculator, quiz, study planning and motivational features")
+
+Rel(student, studentsos, "Uses")
+
+@enduml
