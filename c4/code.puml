@@ -1,0 +1,43 @@
+@startuml StudentSOS_Code
+
+title StudentSOS Agent - C4 Level 4 Code Diagram
+
+skinparam class {
+    RoundCorner 15
+}
+
+class MainApplication {
+    +display_menu()
+    +get_user_choice()
+    +run_application()
+}
+
+class Calculator {
+    +add(a, b)
+    +subtract(a, b)
+    +multiply(a, b)
+    +divide(a, b)
+}
+
+class Quiz {
+    +quiz()
+    +display_question()
+    +calculate_score()
+}
+
+class StudyPlanner {
+    +create_plan()
+    +display_plan()
+}
+
+class Motivation {
+    +get_motivation()
+    +display_message()
+}
+
+MainApplication --> Calculator : uses
+MainApplication --> Quiz : uses
+MainApplication --> StudyPlanner : uses
+MainApplication --> Motivation : uses
+
+@enduml
